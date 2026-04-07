@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #fafafa;
+  color: #1a1a1a;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.wrap {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3rem 1.75rem 6rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 4.25rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.03em;
+  color: #0d0d0d;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.1rem 1.35rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+nav a {
+  color: #737373;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #1a1a1a;
+}
+
+main {
+  text-align: center;
+}
+
+.portrait {
+  width: min(260px, 70vw);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  filter: grayscale(1);
+}
+
+.intro {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: #0d0d0d;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.sub {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #6b6b6b;
+  margin: 0 0 1.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.cta {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #525252;
+  text-decoration: underline;
+  text-decoration-color: #c4c4c4;
+  text-underline-offset: 5px;
+}
+
+.cta:hover {
+  color: #0d0d0d;
+  text-decoration-color: #0d0d0d;
+}
+
+.pitch {
+  margin-top: 5.5rem;
+  padding: 0 0.25rem;
+  text-align: center;
+  font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+  line-height: 1.72;
+  color: #4a4a4a;
+  font-weight: 400;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pitch p {
+  margin: 0;
+}
+
+.pitch strong {
+  color: #000;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.highlights {
+  margin-top: 5.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid #e8e8e8;
+  text-align: left;
+}
+
+.highlight {
+  margin-bottom: 2.75rem;
+  max-width: 36rem;
+}
+
+.highlight:last-child {
+  margin-bottom: 0;
+}
+
+.highlight p {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #5a5a5a;
+  line-height: 1.72;
+}
+
+.highlight .meta {
+  margin-top: 0.65rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #949494;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+/* Skill cards (useSkillCards.ts) */
+.skill-cards-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.skill-card {
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  max-width: 14rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(0.68rem, 1.1vw, 0.8125rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: linear-gradient(160deg, #fff 0%, #f0f0f0 55%, #e4e4e4 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  opacity: 1;
+  will-change: transform;
+  pointer-events: none;
+  user-select: none;
+}
+
+.skill-card.skill-card--fading {
+  transition: opacity 0.75s ease-out;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-cards-layer {
+    display: none;
+  }
+}
